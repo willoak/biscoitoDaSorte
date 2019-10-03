@@ -2,7 +2,7 @@ import React, {Fragment, Component} from 'react';
 import { 
   StyleSheet,
   View,
-  Text, Button, TouchableOpacity
+  Text, Button, TouchableOpacity, Image,
 } from 'react-native';
 
 //botao customizavel
@@ -46,7 +46,9 @@ export default class App extends Component {
   }
   render (){
     return(
-      <View>
+      <View style={styles.corpo}>
+        <Image source={require('./images/cookie.png')} />
+        <Text>Frase do dia</Text>
         <Botao cor="green" textoB="Clique para ver a sorte" onPress={this.mostrarMensagem} />
       </View>
     );
@@ -54,7 +56,11 @@ export default class App extends Component {
 };
 
 const styles = StyleSheet.create({
-
+  corpo: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
 });
 
 
